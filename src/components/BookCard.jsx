@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 // This component displays ONE book.
 
 
+// Displays a book cover, basic information, rating, and details link.
 function BookCard({ book }) {
 
   return (
