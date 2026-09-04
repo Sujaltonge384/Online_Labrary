@@ -4,28 +4,14 @@ import {
 } from "react-router-dom";
 
 
-// --------------------------------------------------
 // 404 PAGE
-// --------------------------------------------------
-//
+
 // "*" in App.jsx sends undefined URLs here.
 //
 // useLocation() gives us the current URL.
-//
-// Example:
-//
-// User visits:
-//
-// /hello-world
-//
-// location.pathname:
-//
-// "/hello-world"
-//
-// We display that URL on the page as required
-// by the assignment.
-//
 
+
+// Displays a friendly message when the user visits an invalid URL.
 function NotFound() {
 
   const location =
