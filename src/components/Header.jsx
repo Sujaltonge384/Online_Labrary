@@ -1,19 +1,29 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
-// Header provides navigation links for the library application.
+// Header provides the main navigation for the library application.
 function Header() {
+  // Add an active class to show which page the user is currently viewing.
+  const getNavClass = ({ isActive }) =>
+    isActive ? "nav-link active" : "nav-link";
+
   return (
     <header className="header">
-      <Link to="/" className="logo">
+      <NavLink to="/" className="logo">
         📚 BookNest
-      </Link>
+      </NavLink>
 
       <nav className="nav">
-        <Link to="/">Home</Link>
-        <Link to="/books">Browse Books</Link>
-        <Link to="/add-book" className="add-book-link">
+        <NavLink to="/" className={getNavClass} end>
+          Home
+        </NavLink>
+
+        <NavLink to="/books" className={getNavClass}>
+          Browse Books
+        </NavLink>
+
+        <NavLink to="/add-book" className="add-book-link">
           + Add Book
-        </Link>
+        </NavLink>
       </nav>
     </header>
   );
