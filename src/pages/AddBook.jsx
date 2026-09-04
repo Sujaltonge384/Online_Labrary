@@ -9,6 +9,7 @@ import { addBook } from "../store/bookSlice";
 
 // This page allows the user to add their own book.
 
+// Form for adding a new book to the Redux collection.
 function AddBook() {
 
   // Redux dispatch function.
