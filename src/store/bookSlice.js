@@ -10,6 +10,8 @@ export const fetchBooksFromAPI = createAsyncThunk(
   }
 );
 
+
+// Initial Redux state for the library books.
 const initialState = {
   books: [],
   loading: false,
