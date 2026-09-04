@@ -56,7 +56,7 @@ function BrowseBooks() {
 
     : books;
 
-
+// Filter books by selected category and search text.
   const filteredBooks =
     categoryFilteredBooks.filter((book) => {
 
