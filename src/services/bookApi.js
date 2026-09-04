@@ -1,10 +1,10 @@
-// ==================================================
+
 // BOOK API SERVICE
-// ==================================================
-//
+
+
 // This file is responsible for getting books from
 // the Open Library API.
-//
+
 // We fetch books for different categories separately:
 //
 // Fiction
@@ -12,25 +12,21 @@
 // Sci-Fi
 // Fantasy
 //
-// Then we combine all the results into one array.
-// ==================================================
+// Then we combine all the results into one array and return it to the Redux store.
 
 
-// Open Library API
-const API_BASE_URL =
-  "https://openlibrary.org/search.json";
+// Open Library API endpoint used to fetch book data.
+const API_BASE_URL = "https://openlibrary.org/search.json";
 
 
-// --------------------------------------------------
 // CATEGORY SEARCHES
-// --------------------------------------------------
-//
+
+
 // Each category uses a different search query.
-//
+
 // This gives our application books belonging to
 // different categories instead of making every book
 // "Fiction".
-//
 
 const categoryQueries = {
   Fiction: "fiction",
@@ -40,14 +36,8 @@ const categoryQueries = {
 };
 
 
-// --------------------------------------------------
 // FETCH BOOKS FOR ONE CATEGORY
-// --------------------------------------------------
-//
-// category = "Fiction"
-// category = "Fantasy"
-// etc.
-//
+
 
 const fetchBooksByCategory = async (category) => {
 
@@ -82,7 +72,7 @@ const fetchBooksByCategory = async (category) => {
     .map((book, index) => {
 
       // Get author.
-      //
+    
       // Some API books don't contain author_name,
       // so we provide a fallback.
       const author =
@@ -128,7 +118,6 @@ const fetchBooksByCategory = async (category) => {
         author:
           author,
 
-        // IMPORTANT:
         // Use the category that we requested.
         category:
           category,
@@ -154,16 +143,14 @@ const fetchBooksByCategory = async (category) => {
 };
 
 
-// --------------------------------------------------
 // FETCH ALL BOOKS
-// --------------------------------------------------
-//
+
 // This function fetches books from all four categories.
-//
+
 // Promise.all() allows all API requests to run
 // instead of waiting for one category to finish
 // before requesting the next one.
-//
+
 
 export const fetchBooks = async () => {
 
@@ -201,7 +188,7 @@ export const fetchBooks = async () => {
 
 
     // Remove duplicate books.
-    //
+
     // Sometimes Open Library can return the same
     // book in different searches.
     const uniqueBooks =
